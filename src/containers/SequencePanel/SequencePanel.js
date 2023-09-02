@@ -12,6 +12,8 @@ export default class SequencePanel extends Component {
                     <div style = { {float:'left',padding: '5px'} }>Action History</div>
                 </Row>
                 <ActionSequenceView { ...this.props }/>
+
+
                 
                 {/* <SequenceView  { ...this.props }/> */}
             </div>

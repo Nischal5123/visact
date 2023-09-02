@@ -29,4 +29,6 @@ export default class ChartPreview extends Component {
             </div>
         )
     }
+
+
 }

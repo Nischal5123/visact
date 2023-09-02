@@ -18,6 +18,23 @@ const initialState = {
 
 export default (state = initialState, action) => {
     const newSpec = JSON.parse(state.specHistory[state.specIndex]);
+    const apiUrl = 'http://127.0.0.1:5500/encode';
+
+fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ newSpec }),
+})
+.then(response => response.json())
+.then(data => {
+    // Handle the response data from the Python function
+    console.log(data);
+})
+.catch(error => {
+    console.error('Error:', error);
+});
     const newState = Object.assign({},state);
     let newSpecHistory = [];
     let newActionHistory = [];
